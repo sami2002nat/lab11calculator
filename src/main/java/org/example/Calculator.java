@@ -8,15 +8,40 @@ public class Calculator {
         this.number = number;
     }
 
-    void inmultire(float number2) {
-        this.number *= number2;
+    Calculator impartire(float number2) {
+        if (number2 == 0) {
+            throw new IllegalArgumentException("Impartitorul nu poare fii zero");
+        } else
+            this.number /= number2;
+        return this;
     }
 
-    void scadere(float number2) {
-        this.number -= number2;
+    Calculator impartireNormala(float number2) {
+            this.number /= number2;
+        return this;
+    }
+
+    Calculator adunare(float number2) {
+        this.number += number2;
+        return this;
+    }
+
+    Calculator radical() {
+        this.number = (float) Math.sqrt(this.number);
+        return this;
+    }
+
+    Calculator modulo(float number2) {
+        this.number %= number2;
+        return this;
+    }
+
+    Calculator negativ(float number2) {
+        this.number = -number2;
+        return this;
     }
 
     public float getNumber() {
-        return number;
+        return this.number;
     }
 }
